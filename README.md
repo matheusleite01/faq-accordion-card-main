@@ -23,4 +23,4 @@ Thanks for checking out this front-end coding challenge.
 
 ## Live site URL
 
-- [faq-accordion-card-main](https://matheusleite01.github.io/faq-accordion-card-main/)
+- [faq-accordion-card-main](https://matheusleite01.github.io/faq-accordion-card-main/web/)
