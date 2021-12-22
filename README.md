@@ -22,3 +22,5 @@ Thanks for checking out this front-end coding challenge.
 - Twitter - [@Theuz*o*](https://twitter.com/Theuz_o_)
 
 ## Live site URL
+
+- [faq-accordion-card-main](https://matheusleite01.github.io/faq-accordion-card-main/)
