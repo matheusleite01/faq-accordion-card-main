@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  background: linear-gradient(
+    to top,
+    var(--Background-gradient-Soft-blue),
+    var(--Background-gradient-Soft-violet)
+  );
+}
+
+:root {
+  --Primary-text-very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Primary-text-Soft-red: hsl(14, 88%, 65%);
+
+  --Background-gradient-Soft-violet: hsl(273, 75%, 66%);
+  --Background-gradient-Soft-blue: hsl(240, 73%, 65%);
+
+  --Neutral-text-Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Neutral-text-Dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --Dividers-Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  max-width: 900px;
+  margin: 0 10px;
+  padding: 70px 100px 70px 0;
+  background: #fff;
+  border-radius: 15px;
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: -8% center;
+}
+
+.card__image {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.card__image img {
+  flex: 1;
+  max-width: 400px;
+  transform: translateX(-6rem);
+}
+
+.card__image img:nth-of-type(2) {
+  display: none;
+}
+
+.card__box {
+  display: block;
+  position: absolute;
+  top: 56%;
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 12;
+}
+
+.card__content {
+  flex: 1;
+  max-width: 320px;
+}
+
+.card__content button:hover {
+  color: var(--Primary-text-Soft-red);
+}
+
+.card__content h1 {
+  font-size: 3rem;
+  color: var(--Primary-text-very-dark-desaturated-blue);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.accordion__item {
+  padding-top: 30px;
+  border-bottom: 1px solid var(--Dividers-Light-grayish-blue);
+}
+
+.accordion__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: "Kumbh Sans", sans-serif;
+  color: var(--Primary-text-very-dark-desaturated-blue);
+  border: none;
+  background: transparent;
+}
+
+.accordion__question::after {
+  content: "";
+  display: inline-block;
+  background-image: url("../images/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 8px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.accordion__question.open::after {
+  transform: rotate(180deg);
+  transition: 0.4s;
+}
+
+.accordion__question.open {
+  font-weight: 700;
+}
+
+.accordion__colapse {
+  margin-top: 12px;
+  color: var(--Neutral-text-Dark-grayish-blue);
+}
+
+.accordion__colapse p {
+  display: none;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.accordion__colapse p.active {
+  display: block;
+  animation: slideDown 0.5s;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 810px) {
+  body {
+    padding-top: 80px;
+  }
+  .card {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 46px 24px;
+    background-image: url("../images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center 0%;
+    background-size: 20rem;
+  }
+
+  .card__image img {
+    position: absolute;
+    top: -8.8rem;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    transform: translateX(-50%);
+  }
+
+  .card__image img:nth-of-type(2) {
+    display: block;
+  }
+
+  .card__box {
+    display: none;
+  }
+
+  .card__content {
+    max-width: 100%;
+    padding-top: 7rem;
+  }
+
+  .card__content h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 338px) {
+  .card {
+    padding: 46px 13px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--Primary-text-very-dark-desaturated-blue);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
